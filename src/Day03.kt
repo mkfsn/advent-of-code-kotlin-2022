@@ -16,17 +16,17 @@ fun main() {
 
     fun part1(input: List<String>): Int {
         return input
-                .map { findCommonItem(*it.chunked(it.length/2).toTypedArray()) }
-                .map { toPriority(it) }
-                .sumOf { it }
+            .map { findCommonItem(*it.chunked(it.length / 2).toTypedArray()) }
+            .map { toPriority(it) }
+            .sumOf { it }
     }
 
     fun part2(input: List<String>): Int {
         return input
-                .chunked(3)
-                .map{ findCommonItem(*it.toTypedArray()) }
-                .map { toPriority(it) }
-                .sumOf { it }
+            .chunked(3)
+            .map { findCommonItem(*it.toTypedArray()) }
+            .map { toPriority(it) }
+            .sumOf { it }
     }
 
     // test if implementation meets criteria from the description, like:
