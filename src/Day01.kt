@@ -1,15 +1,6 @@
 fun main() {
     fun makeGroups(input: List<String>): List<Int> {
-        return input.fold(mutableListOf(mutableListOf<String>())) { acc, ele ->
-            if (ele == "") {
-                acc.add(mutableListOf())
-            } else {
-                acc.last().add(ele)
-            }
-            acc
-        }.map {
-            nums -> nums.sumOf { it.toInt() }
-        }
+        return input.chunkedBy { ele -> ele == "" }.map { nums-> nums.sumOf { it.toInt() } }
     }
 
     fun part1(input: List<String>): Int {
