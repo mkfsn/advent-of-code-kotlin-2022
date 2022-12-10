@@ -51,7 +51,7 @@ fun main() {
         fun countVisibleTrees(cur: Int, others: List<Int>) =
             others.indexOfFirst { it >= cur }.also {
                 if (it == -1) return others.count { v -> v < cur }
-                return it+1
+                return it + 1
             }
 
         fun traverse(treeMap: List<List<Int>>, scoreMap: MutableList<MutableList<Int>>) {
